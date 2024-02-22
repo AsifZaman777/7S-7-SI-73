@@ -1,9 +1,19 @@
 import zim from "https://zimjs.org/cdn/016/zim";
-const { Frame, Label, Pic, Rectangle, Button} = zim;
-
+const {
+  Frame,
+  Circle,
+  Button,
+  Label,
+  Rectangle,
+  GlowEffect,
+  Pic,
+  Slider,
+  Line,
+  Blob,
+} = zim;
 
 new Frame(
-  "fit",
+  FIT,
   1024,
   768,
   "#d1d5e6",
@@ -25,11 +35,15 @@ function ready() {
     let iceCube8 = iceCube.clone().pos(100,400);
     let iceCube9 = iceCube.clone().pos(100,0);
 
-  
-
-  
-
-
+  // add a button
+  let button = new Button(200, 100, "গলন শুরু \n করুন").center().mov(390,100)
+  .tap(function () {
+    //scale down
+    iceCube.animate({scale:0.5});
+    iceCube2.animate({scale:0.5});
+    iceCube3.animate({scale:0.5});
+    
+  });
 
     
 
